@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Order;
 use Illuminate\Http\Request;
 
@@ -18,9 +19,15 @@ class OrderController extends Controller
             'phone'=>'required',
             'address'=>'required',
         ]);
-        $data['user_id']=auth()->user->id;
+        $data['user_id']=auth()->user()->id;
         $data['status']='Pending';
         Order::create($data);
-        return back()->with('success','Order has been placed successfully');
+        Cart::find($request->cart_id)->delete();
+        return redirect('/')->with('success','Order has been placed successfully');
+    }
+    public function index()
+    {
+        $orders=Order::all();
+        return view('orders.index',compact('orders'));
     }
 }
