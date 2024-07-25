@@ -16,11 +16,11 @@
         </div>
         <div>
             @auth
-            <a href="" class="text-black font-bold">Hi ,{{auth()->user()->name}}</a>
-            <a href="{{route('mycart')}}" class="p-2 text-black font-bold">My Cart</a>
+            <a href="" class="text-black font-bold">Hi , <i class="ri-user-line"></i>{{auth()->user()->name}}</a>
+            <a href="{{route('mycart')}}" class="p-2 text-black font-bold"><i class="ri-shopping-cart-fill"></i>My Cart</a>
             <form action="{{route('logout')}}" method="post" class="inline">
                 @csrf
-                <button type="submit" class="p-2 font-bold text-black">Logout</button>
+                <button type="submit" class="p-2 font-bold text-black"><i class="ri-logout-box-line"></i>Logout</button>
             </form>
             @else
             <a href="/login" class="p-2 hover:text-blue-500">Login</a>
