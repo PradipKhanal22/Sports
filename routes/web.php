@@ -28,11 +28,11 @@ Route::middleware('auth')->group(function(){
     Route::post('orders/store',[OrderController::class,'store'])->name('orders.store');
 });
 
-Route::get('/dashboard',[DashboardController::class,'dashboard'])->middleware(['auth','verified'])
+Route::get('/dashboard',[DashboardController::class,'dashboard'])->middleware(['auth','isadmin'])
 ->name('dashboard');
 
 
-Route::middleware('auth')->group(function(){
+Route::middleware(['auth','isadmin'])->group(function(){
 
 // Category
 Route::get('/categories',[CategoryController::class,'index'])-> name('categories.index');
