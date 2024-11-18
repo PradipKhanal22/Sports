@@ -68,6 +68,7 @@ class OrderController extends Controller
         $order->save();
         $cart->delete();
         return redirect('/')->with('success','Order has been placed successfully');
+
       }
     }
 }
