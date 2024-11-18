@@ -26,6 +26,9 @@ Route::middleware('auth')->group(function(){
 
     // Orders
     Route::post('orders/store',[OrderController::class,'store'])->name('orders.store');
+
+    Route::get('orders/{id}/storeEsewa',[OrderController::class,'storeEsewa'])->name('orders.storeEsewa');
+
 });
 
 Route::get('/dashboard',[DashboardController::class,'dashboard'])->middleware(['auth','isadmin'])
