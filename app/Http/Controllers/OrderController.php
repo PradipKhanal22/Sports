@@ -61,14 +61,21 @@ class OrderController extends Controller
         $order->quantity = $cart->quantity;
         $order->payment_method = "eSewa";
         $order->name = $cart->user->name;
-        $order->phone = $cart->user->phone;
-        $order->address = $cart->user->address;
+        $order->phone = 'N/A';
+        $order->address = 'N/A';
         $order->user_id = auth()->user()->id;
         $order->status = "Pending";
         $order->save();
         $cart->delete();
+        $emaildata=[
+            'name' => $order->user->name,
+            'status' => $status,
+        ];
+        Mail::send('emails.orderemail',$emaildata,function ($message) use ($order)
+    {
+        $message->to($order->user->email, $order->user->name)->subject('Order Notification');
+    });
         return redirect('/')->with('success','Order has been placed successfully');
-
       }
     }
 }

@@ -10,7 +10,7 @@
 </head>
 <body class="">
     @include('layouts.alert')
-    <div class=" sticky top-1 flex justify-between px-20 bg-blue-700 text-white py-2">
+    <div class="top-1 flex justify-between px-20 bg-blue-700 text-white py-2 z-10 mb-2">
         <div>
             <a href="" class="ri-phone-fill">9765660867</a>
         </div>
@@ -27,7 +27,7 @@
             @endauth
         </div>
     </div>
-    <nav class="flex justify-between pos-sticky top-0 items-center px-20 py-5 shadow-md bg-gray-300 ">
+    <nav class="flex justify-between sticky z-11 top-0 items-center px-20 py-5 shadow-md bg-gray-300 ">
     <div>
         <img src="{{asset('logo.png')}}" class="w-12" alt="">
     </div>

@@ -25,9 +25,9 @@
         </div>
         <div class="col-span-1 border shadow-lg rounded-lg px-2">
             <h2 class="text-2xl font-semibold text-gray-800">Total: {{ $cart->product->price * $cart->quantity }}</h2>
-            <select name="payment_method" class="w-full border rounded-lg p-2 mt-2">
-                <option value="COD">Cash On Delivery</option>
-            </select>
+            <div name="payment_method" class="w-full border rounded-lg p-2 mt-2 bg-green-500 font-bold text-white">
+                <button value="COD">Cash On Delivery</button>
+            </div>
             <button class="bg-blue-500 text-white p-2 rounded-lg mt-5">Checkout</button>
         </div>
     </div>
