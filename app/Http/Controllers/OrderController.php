@@ -76,6 +76,7 @@ class OrderController extends Controller
         $message->to($order->user->email, $order->user->name)->subject('Order Notification');
     });
         return redirect('/')->with('success','Order has been placed successfully');
+
       }
     }
 }
