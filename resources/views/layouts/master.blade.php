@@ -12,7 +12,7 @@
     @include('layouts.alert')
     <div class="top-1 flex justify-between px-20 bg-blue-700 text-white py-2 z-10 mb-2">
         <div>
-            <a href="" class="ri-phone-fill">9765660867</a>
+            <a href="" class="sm:block hidden ri-phone-fill"> 9765660867</a>
         </div>
         <div>
             @auth
